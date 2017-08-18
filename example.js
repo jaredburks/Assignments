@@ -21,8 +21,9 @@
 
 	function payCalculator(hours,rate){
 		if(hours<=40){
-			console.log(weeklyPay);
-			alert("Weekly Pay is: $" + weeklyPay);
+			var final = parseFloat(Math.round(weeklyPay * 100) / 100).toFixed(2);
+			console.log(final);
+			alert("Weekly Pay is: $" + final);
 		}
 		else if(hours>40){
 			var overtime = hours-40;
@@ -35,6 +36,11 @@
 		}
 	}
 	payCalculator(hours, pay);
+
+	//below is a way to display single digits with 2 decimal places. Example 1 would be 1.00
+	var result = parseFloat(Math.round(3 * 100) / 100).toFixed(2);
+	console.log(result);
+
 
 	// if(workerAhours<40){
 	// 	console.log(weeklyPayA);
