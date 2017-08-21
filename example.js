@@ -15,31 +15,31 @@
 	// var weeklyPayB = workerBhours*workerBpay;
 
 	//using functions with these 3 variables
-	var hours = prompt("Type in your hours: ");
-	var pay = prompt("Type in your pay rate: ");
-	var weeklyPay = hours*pay;
-
-	function payCalculator(hours,rate){
-		if(hours<=40){
-			var final = parseFloat(Math.round(weeklyPay * 100) / 100).toFixed(2);
-			console.log(final);
-			alert("Weekly Pay is: $" + final);
-		}
-		else if(hours>40){
-			var overtime = hours-40;
-			hours = hours - overtime;
-			weeklyPay = hours * pay;
-			var extraPay = overtime * pay*1.5;
-			weeklyPay = (extraPay + weeklyPay).toFixed(2);
-			console.log(weeklyPay);
-			alert("Weekly Pay is: $" + weeklyPay);
-		}
-	}
-	payCalculator(hours, pay);
+	// var hours = prompt("Type in your hours: ");
+	// var pay = prompt("Type in your pay rate: ");
+	// var weeklyPay = hours*pay;
+	
+	// function payCalculator(hours,rate){
+	// 	if(hours<=40){
+	// 		var final = parseFloat(Math.round(weeklyPay * 100) / 100).toFixed(2);
+	// 		console.log(final);
+	// 		alert("Weekly Pay is: $" + final);
+	// 	}
+	// 	else if(hours>40){
+	// 		var overtime = hours-40;
+	// 		hours = hours - overtime;
+	// 		weeklyPay = hours * pay;
+	// 		var extraPay = overtime * pay*1.5;
+	// 		weeklyPay = (extraPay + weeklyPay).toFixed(2);
+	// 		console.log(weeklyPay);
+	// 		alert("Weekly Pay is: $" + weeklyPay);
+	// 	}
+	// }
+	// payCalculator(hours, pay);
 
 	//below is a way to display single digits with 2 decimal places. Example 1 would be 1.00
-	var result = parseFloat(Math.round(3 * 100) / 100).toFixed(2);
-	console.log(result);
+	// var result = parseFloat(Math.round(3 * 100) / 100).toFixed(2);
+	// console.log(result);
 
 
 	// if(workerAhours<40){
@@ -87,3 +87,16 @@
 	// 	}
 	// }
 
+	//Javascript problem 3. Capitalize 1st character of each word seperated by a space.
+	var userString = prompt("Type some words: ");
+
+	function bigLetters(){
+		var userArray = userString.split(" ");
+		//console.log(userArray);
+		for(var i = 0 ; i < userArray.length ; i++){
+	        userArray[i] = userArray[i].charAt(0).toUpperCase() + userArray[i].substr(1);
+    	}
+    	alert(userArray.join(" "));
+	}
+
+	bigLetters();
