@@ -88,15 +88,73 @@
 	// }
 
 	//Javascript problem 3. Capitalize 1st character of each word seperated by a space.
-	var userString = prompt("Type some words: ");
+	// var userString = prompt("Type some words: ");
 
-	function bigLetters(){
-		var userArray = userString.split(" ");
-		//console.log(userArray);
-		for(var i = 0 ; i < userArray.length ; i++){
-	        userArray[i] = userArray[i].charAt(0).toUpperCase() + userArray[i].substr(1);
-    	}
-    	alert(userArray.join(" "));
+	// function bigLetters(){
+	// 	var userArray = userString.split(" ");
+	// 	//console.log(userArray);
+	// 	for(var i = 0 ; i < userArray.length ; i++){
+	//         userArray[i] = userArray[i].charAt(0).toUpperCase() + userArray[i].substr(1);
+ //    	}
+ //    	alert(userArray.join(" "));
+	// }
+
+	// bigLetters();
+
+	//failing at this(problem 4), ganna try something different below.
+	// function compression(){
+	// 	var str = prompt("Type Letters: ");
+	// 	var initalChar = str.charAt(0);
+	// 	var count = {};
+		
+	// 	for(var i = 0; i < str.length; i++){
+	// 		var currentChar = str[i];
+	// 		if(count[currentChar]){
+	// 			count[currentChar]++;
+	// 		}
+	// 		else{
+	// 			count[currentChar] = 1;
+	// 		}
+	// 	}
+	// 	console.log(count);
+	// 	console.log(Object.keys(count));
+	// 	console.log(Object.values(count));
+	// 	console.log(count.a);
+	// 	alert(JSON.stringify(count));		
+	// }
+
+	// compression();
+
+		//Javascript problem 4
+		function compression(){
+		var str = prompt("Type Letters: ");
+		var initalChar = str.charAt(0);
+		var count = 0;
+		var compressedStr = "";
+		
+		for(var i = 0; i < str.length; i++){
+			var currentChar = str[i];
+			if(initalChar === currentChar){
+				count++;
+			}
+			else if(count === 1){
+				compressedStr += initalChar;
+				initalChar = currentChar;
+			}
+			else{
+				compressedStr += count + initalChar;
+				initalChar = currentChar;
+				count = 1;
+			}
+		}
+
+		if(count ===1){
+			compressedStr += currentChar;
+		}
+		else{
+			compressedStr += count + currentChar;
+		}
+		console.log(compressedStr);
 	}
 
-	bigLetters();
+	compression();
