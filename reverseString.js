@@ -55,7 +55,7 @@
 // }
 //primeCounter();
 
-//example of problem 7
+//example of problem 7 that works
 // function isPrime(num) {
 // 	for(var i = 2; i <= 100; i++){
 // 	  	var prime = true;
@@ -70,3 +70,39 @@
 // 	}
 // }
 // isPrime();
+
+//Problem 8, fibonacci
+// var startNum = 1;
+// var savedNum = 1;
+// var newSum = startNum + savedNum;
+
+// function fibonacci(){
+// 	for(var i = 1; i <= 20; i++){
+// 		if(newSum >= savedNum){
+// 			console.log(newSum);
+// 			startNum = savedNum;
+// 			savedNum = newSum;
+// 			newSum = startNum + savedNum;
+// 		}
+// 	}
+// }
+
+// fibonacci();
+
+//Problem 8 with user input
+var startNum = parseInt(prompt("Enter an integer: "));
+var savedNum = startNum;
+var newSum = startNum + savedNum;
+
+function fibonacci(){
+	for(var i = 1; i <= 20; i++){
+		if(newSum >= savedNum){
+			console.log(newSum);
+			startNum = savedNum;
+			savedNum = newSum;
+			newSum = startNum + savedNum;
+		}
+	}
+}
+
+fibonacci();
